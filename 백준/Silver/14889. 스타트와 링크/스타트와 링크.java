@@ -25,12 +25,13 @@ public class Main {
 			}
 		}
 
-		minValue = Math.min(minValue, Math.abs(startTeam - linkTeam));
-
 		if (minValue == 0) {
 			System.out.println(0);
 			System.exit(0);
 		}
+
+		minValue = Math.min(minValue, Math.abs(startTeam - linkTeam));
+
 	}
 
 	public void divideTeam(int idx, int start) {
@@ -62,11 +63,6 @@ public class Main {
 			for (int j = 0; j < N; j++) {
 				S[i][j] = Integer.parseInt(st.nextToken());
 			}
-		}
-
-		boolean[] visited = new boolean[N];
-		for (int i = 0; i < N; i++) {
-			visited[i] = false;
 		}
 
 		divideTeam(0, 0);
