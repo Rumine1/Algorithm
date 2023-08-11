@@ -25,12 +25,12 @@ public class Main {
 			}
 		}
 
+		minValue = Math.min(minValue, Math.abs(startTeam - linkTeam));
+
 		if (minValue == 0) {
 			System.out.println(0);
 			System.exit(0);
 		}
-
-		minValue = Math.min(minValue, Math.abs(startTeam - linkTeam));
 
 	}
 
