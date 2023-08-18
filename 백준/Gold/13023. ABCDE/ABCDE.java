@@ -47,7 +47,6 @@ class Main{
         visited[idx] = true;
         for(int currentLocation:list[idx]){
             if(!visited[currentLocation]){
-                visited[currentLocation] = true;
                 dfs(currentLocation, depth+1);
             }
         }
