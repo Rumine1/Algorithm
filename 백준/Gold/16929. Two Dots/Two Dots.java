@@ -52,6 +52,9 @@ class Main{
     private void Dfs(Position present, Position start, int depth){
         depth++;
         for(int i=0;i<4;i++){
+            if(check){
+                return;
+            }
             int nx = present.getX() + dir[i][0];
             int ny = present.getY() + dir[i][1];
 
