@@ -3,10 +3,14 @@ import java.util.*;
 
 class Main{
     private int N,M;
-    private void solution()  {
-        Scanner sc = new Scanner(System.in);
-        N = sc.nextInt();
-        M = sc.nextInt();
+    private void solution()  throws IOException{
+//        Scanner sc = new Scanner(System.in);
+//        N = sc.nextInt();
+//        M = sc.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
 
         if(N>=M){
             System.out.println(N-M);
@@ -45,7 +49,7 @@ class Main{
         }
         return 0;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         new Main().solution();
     }
 }
