@@ -4,9 +4,6 @@ import java.util.*;
 class Main{
     private int N,M;
     private void solution()  throws IOException{
-//        Scanner sc = new Scanner(System.in);
-//        N = sc.nextInt();
-//        M = sc.nextInt();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
