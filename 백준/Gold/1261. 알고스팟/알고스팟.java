@@ -24,12 +24,11 @@ class Main{
         M = Integer.parseInt(st.nextToken());
         N = Integer.parseInt(st.nextToken());
         StringBuilder[] sb = new StringBuilder[N];
-        int[][] dir = {{1,0},{0,1},{-1,0},{0,-1}};
 
         for(int i=0;i<N;i++){
             sb[i] = new StringBuilder(br.readLine());
         }
-
+    
         bfs(N,M,sb);
     }
 
