@@ -28,9 +28,11 @@ class Main{
 
         dfs(1, 0);
 
+        StringBuilder sb = new StringBuilder();
         for(int i=2;i<=N;i++){
-            System.out.println(answer[i]);
+            sb.append(answer[i]).append("\n");
         }
+        System.out.println(sb);
     }
 
     public void dfs(int current, int previous){
