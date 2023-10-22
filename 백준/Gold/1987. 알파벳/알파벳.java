@@ -5,18 +5,9 @@ import java.util.*;
 class Main {
     private int R;
     private int C;
-    private StringBuilder[] board;
+    private int[][] board;
     private boolean[] alphabet = new boolean[26];
     private int maxValue;
-    private class Position{
-        private Position(int x, int y){
-            this.x = x;
-            this.y = y;
-        }
-        private int x;
-        private int y;
-
-    }
     private int[][] dir = {{1,0},{0,1},{-1,0},{0,-1}};
 
     public void solution() throws IOException {
@@ -27,39 +18,43 @@ class Main {
         R = Integer.parseInt(st.nextToken());
         C = Integer.parseInt(st.nextToken());
 
-        board = new StringBuilder[R];
-
-        for(int i=0;i<R;i++) {
-            board[i] = new StringBuilder();
-            board[i].append(br.readLine());
+        board = new int[R][C];
+        for (int i = 0; i < R; i++) {
+            String str = br.readLine();
+            for (int j = 0; j < C; j++) {
+                board[i][j] = str.charAt(j) - 'A';
+            }
         }
 
-        dfs(new Position(0, 0), 1,3);
+        dfs(0, 0, 0,3);
         System.out.println(maxValue);
     }
 
-    public void dfs(Position current, int depth, int prior){
-        if(depth==27){
+    public void dfs(int x, int y, int depth, int prior){
+        if(depth==26){
+            System.out.println(26);
+            System.exit(0);
+        }
+
+        if(alphabet[board[x][y]]){
+            maxValue = Math.max(maxValue,depth);
             return;
         }
-        alphabet[board[current.y].charAt(current.x)-'A'] = true;
 
-        if(maxValue<depth){
-            maxValue = depth;
-        }
+        alphabet[board[x][y]] = true;
 
         for(int i=0;i<4;i++){
             if(i==prior){continue;}
 
-            int nx = current.x + dir[i][0];
-            int ny = current.y + dir[i][1];
+            int nx = x + dir[i][0];
+            int ny = y + dir[i][1];
 
-            if(nx<0||ny<0||nx>=C||ny>=R){continue;}
-            if(alphabet[board[ny].charAt(nx)-'A']){continue;}
+            if(nx<0||ny<0||nx>=R||ny>=C){continue;}
 
-            dfs(new Position(nx,ny), depth+1, (i+2)%4);
-            alphabet[board[ny].charAt(nx)-'A'] = false;
+            dfs(nx, ny, depth+1, (i+2)%4);
         }
+        alphabet[board[x][y]] = false;
+
     }
 
 
