@@ -39,6 +39,9 @@ class Main {
     }
 
     public void dfs(Position current, int depth, int prior){
+        if(depth==27){
+            return;
+        }
         alphabet[board[current.y].charAt(current.x)-'A'] = true;
 
         if(maxValue<depth){
