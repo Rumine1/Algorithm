@@ -60,6 +60,11 @@ class Main {
             }
 
             maxWord = Math.max(maxWord, count);
+            
+            if(maxWord==N){
+                System.out.println(N);
+                System.exit(0);
+            }
             return;
         }
 
