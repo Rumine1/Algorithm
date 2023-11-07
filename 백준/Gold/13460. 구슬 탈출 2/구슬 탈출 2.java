@@ -111,16 +111,16 @@
 
                     //겹칠때
                     if(newRx==newBx && newRy==newBy){
-                        if(i==0){ //오른쪽 기울이기 아래
+                        if(i==0){ //아래쪽 기울이기
                             if(cur.rx > cur.bx)newBx -= dir[i][0];
                             else newRx -= dir[i][0];
-                        }else if(i==1){ //아래쪽 기울이기 오른
+                        }else if(i==1){ //오른쪽 기울이기
                             if(cur.ry > cur.by)newBy -= dir[i][1];
                             else newRy -= dir[i][1];
-                        }else if(i==2){ //왼쪽 기울이기 위
+                        }else if(i==2){ //위쪽 기울이기
                             if(cur.rx > cur.bx)newRx -= dir[i][0];
                             else newBx -= dir[i][0];
-                        }else { //위쪽 기울이기 왼
+                        }else { //왼쪽 기울이기
                             if(cur.ry > cur.by)newRy -= dir[i][1];
                             else newBy -= dir[i][1];
                         }
